@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "HelveticaNowDisplay";
+  src: url("/images/68832fb0ffba9b1995adac75-helveticanowdisplay-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-primary: #111111;
+  --color-bg-light: #fbfbfd;
+  --color-card-light: #ffffff;
+  --color-text-main: #111111;
+  --color-text-muted: #666666;
+  --color-border-subtle: rgba(0, 0, 0, 0.08);
+  --color-border-hover: rgba(0, 0, 0, 0.18);
+}
+
+body {
+  background-color: #fbfbfd;
+  color: #111111;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'HelveticaNowDisplay', 'DM Sans', sans-serif;
+}
+
+/* Luxurious Frosted Glass Panels on White Surface */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.glass-panel-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 35px 80px -20px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Dark Contrast Panels */
+.glass-panel-dark {
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #F5F5F7;
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.4);
+}
+
+/* Technical Telemetry Badges */
+.telemetry-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #777777;
+  font-weight: 600;
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #fbfbfd;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Bastian Franke | Produktdesigner",
+  "description": "Portfolio und interaktive 3D-Erlebnis-Webseite von Bastian Franke, Produktdesigner mit dynamischer 3D-Interaktion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
