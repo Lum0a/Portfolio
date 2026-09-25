@@ -20,8 +20,8 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenCo
         {/* Section Header */}
         <div className="space-y-4 max-w-3xl">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-black"></span>
-            <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#666666]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C00]"></span>
+            <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#FF5C00]">
               PORTFOLIO & PRODUKTDESIGN
             </span>
           </div>
@@ -71,7 +71,7 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenCo
 
                 {/* Hover Details Button */}
                 <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-black text-white font-semibold text-xs shadow-lg uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-black group-hover:bg-[#FF5C00] text-white font-semibold text-xs shadow-lg uppercase tracking-wider transition-colors duration-300">
                     <span>Details ansehen</span>
                     <ArrowUpRight className="w-3 h-3" />
                   </span>
@@ -105,11 +105,11 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenCo
                 </div>
 
                 <div className="pt-3 border-t border-black/10 flex items-center justify-between text-xs text-[#444444]">
-                  <span className="inline-flex items-center gap-1 text-black font-semibold group-hover:underline">
+                  <span className="inline-flex items-center gap-1 text-black font-semibold group-hover:text-[#FF5C00] transition-colors">
                     Projektdetails <ArrowUpRight className="w-3 h-3" />
                   </span>
                   {project.metrics && (
-                    <span className="text-black font-mono font-medium text-[11px] bg-black/[0.05] px-2.5 py-0.5 rounded-full">
+                    <span className="text-[#FF5C00] font-mono font-medium text-[11px] bg-[#FF5C00]/10 border border-[#FF5C00]/20 px-2.5 py-0.5 rounded-full">
                       {project.metrics}
                     </span>
                   )}

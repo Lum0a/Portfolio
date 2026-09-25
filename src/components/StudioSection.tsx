@@ -14,8 +14,8 @@ export const StudioSection: React.FC = () => {
         <div className="relative z-10 max-w-4xl space-y-6">
           {/* Eyebrow */}
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-black"></span>
-            <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#666666]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C00]"></span>
+            <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#FF5C00]">
               MEIN STUDIO
             </span>
           </div>
@@ -35,21 +35,21 @@ export const StudioSection: React.FC = () => {
           {/* Quick Pillars */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-black/10">
             <div className="flex items-start gap-3">
-              <Sparkles className="w-4 h-4 text-black shrink-0 mt-0.5" />
+              <Sparkles className="w-4 h-4 text-[#FF5C00] shrink-0 mt-0.5" />
               <div>
                 <h3 className="text-sm font-semibold text-[#111111]">Präzision</h3>
                 <p className="text-xs text-[#666666] mt-1">Detailversessen in Typografie, Interaktion und Code</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Layers className="w-4 h-4 text-black shrink-0 mt-0.5" />
+              <Layers className="w-4 h-4 text-[#FF5C00] shrink-0 mt-0.5" />
               <div>
                 <h3 className="text-sm font-semibold text-[#111111]">Systemisch</h3>
                 <p className="text-xs text-[#666666] mt-1">Skalierbare Designsysteme für Enterprise-Produkte</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <ShieldCheck className="w-4 h-4 text-black shrink-0 mt-0.5" />
+              <ShieldCheck className="w-4 h-4 text-[#FF5C00] shrink-0 mt-0.5" />
               <div>
                 <h3 className="text-sm font-semibold text-[#111111]">Wirkung</h3>
                 <p className="text-xs text-[#666666] mt-1">Nachweisbare Steigerung von Engagement & Conversion</p>

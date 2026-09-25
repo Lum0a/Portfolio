@@ -19,7 +19,7 @@ export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-[#fbfbfd] text-[#111111] selection:bg-black selection:text-white overflow-x-hidden font-sans">
+    <div className="relative min-h-screen bg-[#fbfbfd] text-[#111111] selection:bg-[#FF5C00] selection:text-white overflow-x-hidden font-sans">
       {/* Subtle Concentric Architecture Telemetry Geometry on White Surface */}
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-25 z-0 overflow-hidden">
         <div className="w-[1100px] h-[1100px] border border-black/[0.04] rounded-full animate-spin-slow"></div>

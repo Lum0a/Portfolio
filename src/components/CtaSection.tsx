@@ -13,13 +13,13 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenContact }) => {
     >
       <div className="glass-panel-dark rounded-3xl p-8 sm:p-14 lg:p-20 relative overflow-hidden shadow-2xl">
         {/* Glow backdrop accent */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.04] rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF5C00]/15 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-3xl space-y-8">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[10px] uppercase tracking-[0.25em] text-[#cccccc] backdrop-blur-md">
-            <Sparkles className="w-3 h-3 text-white" />
-            <span>PROJEKT STARTEN</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF5C00]/10 border border-[#FF5C00]/30 text-[10px] uppercase tracking-[0.25em] text-[#FF5C00] backdrop-blur-md">
+            <Sparkles className="w-3 h-3 text-[#FF5C00]" />
+            <span className="font-semibold">PROJEKT STARTEN</span>
           </div>
 
           {/* Heading */}
@@ -39,7 +39,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenContact }) => {
             <button
               onClick={onOpenContact}
               id="cta-primary-btn"
-              className="group inline-flex items-center gap-3 px-9 py-4 rounded-full bg-white text-black font-bold text-xs uppercase tracking-widest hover:bg-[#e6e6e6] transition-all duration-300 shadow-xl cursor-pointer active:scale-95"
+              className="group inline-flex items-center gap-3 px-9 py-4 rounded-full bg-white text-black font-bold text-xs uppercase tracking-widest hover:bg-[#FF5C00] hover:text-white transition-all duration-300 shadow-xl cursor-pointer active:scale-95"
             >
               <span>Jetzt anfragen</span>
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

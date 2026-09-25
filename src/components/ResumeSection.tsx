@@ -31,8 +31,8 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-4 max-w-3xl">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-black"></span>
-              <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#666666]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C00]"></span>
+              <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#FF5C00]">
                 WERDEGANG & QUALIFIKATION
               </span>
             </div>
@@ -51,7 +51,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenContact}
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white text-xs uppercase tracking-widest font-semibold hover:bg-[#222222] transition-all shadow-sm cursor-pointer"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white text-xs uppercase tracking-widest font-semibold hover:bg-[#FF5C00] transition-all duration-300 shadow-sm cursor-pointer"
             >
               <span>Vollständige Vita anfordern</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -196,7 +196,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
             {/* Awards & Auszeichnungen */}
             <div className="glass-panel rounded-3xl p-7 space-y-5 shadow-xs">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-black/[0.04] border border-black/10 flex items-center justify-center text-black">
+                <div className="w-8 h-8 rounded-xl bg-[#FF5C00]/10 border border-[#FF5C00]/20 flex items-center justify-center text-[#FF5C00]">
                   <Award className="w-4 h-4" />
                 </div>
                 <h3 className="text-lg font-bold text-[#111111] font-display">
@@ -221,7 +221,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
                         {award.organization}
                       </div>
                     </div>
-                    <span className="px-2.5 py-0.5 rounded-full bg-black text-white text-[10px] font-mono font-semibold shrink-0">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#FF5C00] text-white text-[10px] font-mono font-semibold shrink-0 shadow-xs">
                       {award.year}
                     </span>
                   </div>

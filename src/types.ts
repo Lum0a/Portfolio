@@ -10,48 +10,6 @@ export interface Project {
   year?: string;
 }
 
-export interface Service {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  features: string[];
-}
-
-export interface ApproachItem {
-  title: string;
-  description: string;
-  metric?: string;
-}
-
-export interface ProcessStep {
-  number: string;
-  title: string;
-  description: string;
-  duration?: string;
-}
-
-export interface Metric {
-  value: string;
-  label: string;
-  subtext?: string;
-}
-
-export interface Testimonial {
-  quote: string;
-  author: string;
-  role: string;
-  company: string;
-  image: string;
-}
-
-export interface TeamMember {
-  name: string;
-  role: string;
-  bio?: string;
-  image: string;
-}
-
 export type SceneMode = 'scroll' | 'orbit' | 'auto';
 
 export interface ResumeExperience {

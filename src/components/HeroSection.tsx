@@ -25,7 +25,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenContact }) => {
         <div className="lg:col-span-8 space-y-8">
           {/* Subtle Telemetry Pill */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/90 border border-black/10 text-[10px] uppercase tracking-[0.25em] text-[#666666] backdrop-blur-md shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-[#FF5C00] animate-pulse shadow-[0_0_8px_rgba(255,92,0,0.6)]"></span>
             <span>Verfügbar für ausgewählte Mandate 2026</span>
           </div>
 
@@ -43,7 +43,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenContact }) => {
             <button
               onClick={() => scrollToSection('work-section')}
               id="hero-btn-portfolio"
-              className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-black text-white font-semibold text-xs uppercase tracking-widest hover:bg-[#222222] transition-all duration-300 shadow-md cursor-pointer active:scale-95"
+              className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-black text-white font-semibold text-xs uppercase tracking-widest hover:bg-[#FF5C00] transition-all duration-300 shadow-md cursor-pointer active:scale-95"
             >
               <span>Portfolio ansehen</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -80,8 +80,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenContact }) => {
             <div className="space-y-1">
               <div className="text-[10px] uppercase tracking-widest text-[#888888] font-mono">Optik-Fokus</div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
-                <span className="text-xs font-mono text-[#333333]">Dynamischer Fokuspunkt</span>
+                <span className="w-1.5 h-1.5 bg-[#FF5C00] rounded-full animate-pulse shadow-[0_0_6px_rgba(255,92,0,0.8)]"></span>
+                <span className="text-xs font-mono text-[#FF5C00] font-semibold">Dynamischer Fokuspunkt</span>
               </div>
             </div>
           </div>

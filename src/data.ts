@@ -1,50 +1,11 @@
 import {
   Project,
-  Service,
-  ApproachItem,
-  ProcessStep,
-  Metric,
-  Testimonial,
-  TeamMember,
   ResumeExperience,
   ResumeEducation,
   ResumeSkillGroup,
   ResumeAward,
   DesignPathStep,
 } from './types';
-
-export const CLIENT_LOGOS = [
-  { name: 'Client 1', src: './images/div-framer-1lv732o-.svg' },
-  { name: 'Client 2', src: './images/div-framer-1lv732o-1-1.svg' },
-  { name: 'Client 3', src: './images/div-framer-1lv732o-2.svg' },
-  { name: 'Client 4', src: './images/div-framer-1lv732o-3.svg' },
-  { name: 'Client 5', src: './images/div-framer-1lv732o-4.svg' },
-  { name: 'Client 6', src: './images/div-framer-1lv732o-5.svg' },
-];
-
-export const SERVICES: Service[] = [
-  {
-    id: 'innovation',
-    title: 'Innovation',
-    description: 'Erfolg, in all seinen Formen, führt zu mehr Erfolg. Wenn wir unseren Teil tun, können wir alle gedeihen.',
-    icon: './images/asterisk-streamline-unicons.svg',
-    features: ['Digitale Produktstrategie', 'Next-Gen Interface Design', 'Interaktive 3D & WebGL Erlebnisse']
-  },
-  {
-    id: 'value',
-    title: 'Mehrwertorientiert',
-    description: 'Erfolg, in all seinen Formen, führt zu mehr Erfolg. Wenn wir unseren Teil tun, können wir alle gedeihen.',
-    icon: './images/channel-streamline-unicons.svg',
-    features: ['Conversion-fokussierte UX', 'Design System Skalierung', 'Messbare Business-Metriken']
-  },
-  {
-    id: 'user-centric',
-    title: 'Benutzerzentriert',
-    description: 'Erfolg, in all seinen Formen, führt zu mehr Erfolg. Wenn wir unseren Teil tun, können wir alle gedeihen.',
-    icon: './images/border-vertical-streamline-unicons.svg',
-    features: ['Nutzerforschung & Testing', 'Barrierefreie Interaktionsmuster', 'Intuitive Benutzerführung']
-  }
-];
 
 export const PROJECTS: Project[] = [
   {
@@ -59,147 +20,37 @@ export const PROJECTS: Project[] = [
     year: '2025'
   },
   {
-    id: 'apex-chrono',
-    client: 'APEX WEARABLES',
-    category: 'Präzisions-Wearable & Ergonomie',
-    title: 'Apex Chrono – Titan Smartwatch',
-    description: 'Ergonomisches Gehäuse aus gebürstetem Titan Grade 5 mit taktiler Krone, Saphirglas und nahtlos integriertem Fluorelastomer-Armband für extreme Belastungen.',
-    image: './images/product-wearable.jpg',
-    tags: ['Wearable Design', 'Titan Grade 5', 'Ergonomie', 'DFM'],
-    metrics: 'Red Dot: Best of the Best',
-    year: '2024'
-  },
-  {
     id: 'lumina-s',
-    client: 'STUDIO LUMINA',
-    category: 'Architekturbeleuchtung & Ambiente',
-    title: 'Lumina S – Skulpturale Tischleuchte',
-    description: 'Schlanke Bogenkonstruktion aus stranggepresstem Aluminium mit integriertem Diffusor, homogener blendfreier LED-Lichtführung und berührungsloser Gestensteuerung.',
+    client: 'STUDIO LICHTFORM',
+    category: 'Leuchtendesign & Skulpturale Ästhetik',
+    title: 'Lumina S – Skulpturale Arbeitsplatzleuchte',
+    description: 'Fließende organische Übergänge treffen auf präzise Reflektortechnologie. Aus einem einzigen Strangpressprofil gefräst, mit integriertem kapazitiven Touch-Dimmer.',
     image: './images/product-luminaire.jpg',
-    tags: ['Lichtdesign', 'Architektur', 'Extrusion', 'Sensortechnik'],
+    tags: ['Leuchtendesign', 'Aluminium-Strangpressen', 'Optik-Design', 'Touch-Interface'],
     metrics: 'German Design Award Nominee',
     year: '2024'
   },
   {
+    id: 'apex-chrono',
+    client: 'CHRONO LABS',
+    category: 'Wearable Tech & Präzisionsmechanik',
+    title: 'Apex Chrono – Titan-Smartwatch der nächsten Generation',
+    description: 'Monolithisches Grade-5-Titangehäuse mit kratzfester DLC-Beschichtung. Ergonomisch gewölbter Sensorboden für ganztägigen Tragekomfort und maximale Signalgenauigkeit.',
+    image: './images/product-wearable.jpg',
+    tags: ['Wearable Architecture', 'Titan Grad 5', 'Biometrie', 'Ergonomie'],
+    metrics: 'Red Dot: Best of the Best',
+    year: '2024'
+  },
+  {
     id: 'orbit-control',
-    client: 'AXON INTERACTION',
-    category: 'Haptisches Eingabegerät & Hardware',
-    title: 'Orbit Control – Haptischer Studio-Controller',
-    description: 'Taktiles Desktop-Eingabegerät für Kreativ-Workflows mit magnetisch gelagertem Encoderrad, maßgefertigten mechanischen Switches und gefrästem Aluminium-Chassis.',
+    client: 'ORBIT CONTROLS',
+    category: 'Creative Tooling & Haptisches Feedback',
+    title: 'Orbit Control – Modulares Editing-Interface',
+    description: 'Präzisions-Eingabegerät für Coloristen und Audio-Engineers. Magnetisch gelagerte Drehgeber mit anpassbarem Drehmoment und OLED-Statusanzeigen pro Kanal.',
     image: './images/product-controller.jpg',
     tags: ['Hardware Design', 'Haptik & Encoder', 'Rapid Prototyping', 'CNC'],
     metrics: '+65% Workflow-Speed',
     year: '2023'
-  }
-];
-
-export const APPROACH_ITEMS: ApproachItem[] = [
-  {
-    title: 'Innovationsgetrieben',
-    description: 'Ich gestalte mit Fokus auf Innovation und spürbaren Mehrwert.',
-    metric: '01'
-  },
-  {
-    title: 'Spürbarer Mehrwert',
-    description: 'Meine Designs schaffen echte Veränderungen und Nutzen.',
-    metric: '02'
-  },
-  {
-    title: 'Zukunftsorientiert',
-    description: 'Ich blicke über das Offensichtliche hinaus, um neue Lösungen zu finden.',
-    metric: '03'
-  },
-  {
-    title: 'Benutzerzentriert',
-    description: 'Der Nutzer steht im Mittelpunkt meiner Designprozesse.',
-    metric: '04'
-  },
-  {
-    title: 'Effizient',
-    description: 'Ich optimiere Prozesse für optimale Ergebnisse.',
-    metric: '05'
-  }
-];
-
-export const PROCESS_STEPS: ProcessStep[] = [
-  {
-    number: '01',
-    title: 'Erstgespräch',
-    description: 'Wir definieren gemeinsam Ihre Ziele und Visionen für das Projekt.',
-    duration: 'Woche 1'
-  },
-  {
-    number: '02',
-    title: 'Forschung & Entwicklung',
-    description: 'Umfassende Analyse und Konzeption zur Schaffung innovativer Lösungen.',
-    duration: 'Woche 1-2'
-  },
-  {
-    number: '03',
-    title: 'Design & Prototyping',
-    description: 'Umsetzung der Konzepte in greifbare Designs und interaktive Prototypen.',
-    duration: 'Woche 2-3'
-  },
-  {
-    number: '04',
-    title: 'Launch & Optimierung',
-    description: 'Erfolg, in all seinen Formen, führt zu mehr Erfolg. Wenn wir unseren Teil tun, können wir alle gedeihen.',
-    duration: 'Woche 3+'
-  }
-];
-
-export const METRICS: Metric[] = [
-  { value: '200 +', label: 'Projekte abgeschlossen', subtext: 'Erfolgreich gelauncht weltweit' },
-  { value: 'x 10', label: 'Effizienzsteigerung', subtext: 'Durch optimierte Design-Systeme' },
-  { value: '3 Wochen', label: 'Durchlaufzeit', subtext: 'Vom Konzept bis zum Prototyp' },
-  { value: '+ 100', label: 'Zufriedene Kunden', subtext: 'Langjährige Partnerschaften' },
-  { value: '- 30%', label: 'Kostenersparnis', subtext: 'In Entwicklungszyklen' },
-  { value: '19 Jahre', label: 'Erfahrung', subtext: 'In digitaler Produktgestaltung' }
-];
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    quote: '„Die Zusammenarbeit mit Bastian hat unsere Strategie völlig verändert.“',
-    author: 'Frank Doe',
-    role: 'CEO',
-    company: 'Walmart',
-    image: './images/image-1929.png'
-  },
-  {
-    quote: '„Erfolg, in all seinen Formen, führt zu mehr Erfolg. Wenn wir unseren Teil tun, können wir alle gedeihen.“',
-    author: 'John Doe',
-    role: 'CEO',
-    company: 'Nike',
-    image: './images/image-1931.png'
-  },
-  {
-    quote: '„Wir sahen messbare Verbesserungen im ersten Quartal und profitieren weiterhin von seiner Führung.“',
-    author: 'Celine Doe',
-    role: 'CEO',
-    company: 'Prada',
-    image: './images/image-1927.png'
-  },
-  {
-    quote: '„Seine Erkenntnisse waren praktisch, datengesteuert und sofort umsetzbar.“',
-    author: 'Mike Doe',
-    role: 'Marketing',
-    company: 'John Deere',
-    image: './images/image-1928.png'
-  }
-];
-
-export const TEAM_MEMBERS: TeamMember[] = [
-  {
-    name: 'Bastian Franke',
-    role: 'Produktdesigner',
-    bio: 'Ich bin Bastian Franke, ein Produktdesigner, der Innovation und Mehrwert in den Vordergrund stellt.',
-    image: './images/rectangle-3.png'
-  },
-  {
-    name: 'Mike Doe',
-    role: 'General Partner',
-    bio: 'Strategische Beratung und Skalierung von Produktinitiativen auf globaler Ebene.',
-    image: './images/rectangle-5.png'
   }
 ];
 
@@ -370,4 +221,3 @@ export const DESIGN_PATH_STEPS: DesignPathStep[] = [
     tools: ['Erstmusterprüfung (FAI)', 'Qualitätskontrolle', 'Serienanlauf']
   }
 ];
-

@@ -83,7 +83,7 @@ export const SceneControls: React.FC<SceneControlsProps> = ({
             <button
               onClick={() => setWireframe(!wireframe)}
               className={`w-9 h-5 rounded-full transition-colors relative cursor-pointer ${
-                wireframe ? 'bg-black' : 'bg-neutral-300'
+                wireframe ? 'bg-[#FF5C00]' : 'bg-neutral-300'
               }`}
             >
               <div
@@ -98,7 +98,7 @@ export const SceneControls: React.FC<SceneControlsProps> = ({
           <div className="space-y-1.5 pt-1">
             <div className="flex items-center justify-between text-xs">
               <span className="text-[#333333] flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-black" />
+                <Sparkles className="w-3.5 h-3.5 text-[#FF5C00]" />
                 Lichtschein Intensität
               </span>
               <span className="text-[10px] font-mono text-[#888888]">
@@ -112,7 +112,7 @@ export const SceneControls: React.FC<SceneControlsProps> = ({
               step="0.1"
               value={glowIntensity}
               onChange={(e) => setGlowIntensity(parseFloat(e.target.value))}
-              className="w-full h-1.5 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-black"
+              className="w-full h-1.5 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-[#FF5C00]"
             />
           </div>
         </div>
@@ -124,7 +124,10 @@ export const SceneControls: React.FC<SceneControlsProps> = ({
         id="scene-controls-toggle"
         className="glass-panel rounded-full px-4 py-2.5 flex items-center gap-2.5 text-xs font-semibold text-[#111111] hover:bg-white transition-all shadow-md cursor-pointer border border-black/10 active:scale-95"
       >
-        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF5C00] opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF5C00]"></span>
+        </span>
         <span className="font-mono text-[11px] uppercase tracking-wider">3D Ring & Licht</span>
         {isExpanded ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronUp className="w-3.5 h-3.5" />}
       </button>

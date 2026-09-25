@@ -54,8 +54,9 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="flex items-center gap-3 group cursor-pointer"
           id="navbar-logo"
         >
-          <span className="text-xl font-bold tracking-tight text-[#111111] group-hover:text-black transition-colors font-display">
-            /logo
+          <span className="text-xl font-bold tracking-tight text-[#111111] group-hover:text-black transition-colors font-display flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#FF5C00] shadow-[0_0_8px_rgba(255,92,0,0.6)]"></span>
+            <span>/logo</span>
           </span>
           <span className="hidden sm:inline-block text-[10px] uppercase tracking-[0.25em] text-[#666666] font-medium pl-3 border-l border-black/10">
             Bastian Franke
@@ -137,7 +138,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={onOpenContact}
             id="navbar-contact-btn"
-            className="group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black text-white font-semibold text-xs uppercase tracking-widest hover:bg-[#222222] transition-all duration-300 shadow-sm cursor-pointer active:scale-95"
+            className="group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black text-white font-semibold text-xs uppercase tracking-widest hover:bg-[#FF5C00] transition-all duration-300 shadow-sm cursor-pointer active:scale-95"
           >
             <span>Projekt anfragen</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -49,8 +49,8 @@ export const HorizontalPathSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-4 max-w-3xl">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-black"></span>
-              <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#666666]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C00]"></span>
+              <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#FF5C00]">
                 ARBEITSWEISE & METHODIK
               </span>
             </div>
@@ -68,7 +68,7 @@ export const HorizontalPathSection: React.FC = () => {
           {/* Navigation Controls & Counter */}
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex items-center gap-1.5 text-xs font-mono text-[#777777] bg-white/80 backdrop-blur-md px-3.5 py-2 rounded-full border border-black/10 shadow-xs">
-              <span className="font-semibold text-black">Phase 0{activeStepIndex + 1}</span>
+              <span className="font-semibold text-[#FF5C00]">Phase 0{activeStepIndex + 1}</span>
               <span>/</span>
               <span>0{DESIGN_PATH_STEPS.length}</span>
             </div>
@@ -98,7 +98,7 @@ export const HorizontalPathSection: React.FC = () => {
         <div className="relative pt-6 pb-2 hidden md:block">
           <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-black/10 -translate-y-1/2 z-0" />
           <div
-            className="absolute top-1/2 left-0 h-0.5 bg-black -translate-y-1/2 z-0 transition-all duration-500"
+            className="absolute top-1/2 left-0 h-0.5 bg-[#FF5C00] -translate-y-1/2 z-0 transition-all duration-500"
             style={{
               width: `${(activeStepIndex / (DESIGN_PATH_STEPS.length - 1)) * 100}%`
             }}
@@ -116,7 +116,7 @@ export const HorizontalPathSection: React.FC = () => {
                 <div
                   className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-mono font-bold transition-all duration-300 border ${
                     activeStepIndex === idx
-                      ? 'bg-black text-white border-black shadow-md ring-4 ring-black/10'
+                      ? 'bg-[#FF5C00] text-white border-[#FF5C00] shadow-md ring-4 ring-[#FF5C00]/25'
                       : idx < activeStepIndex
                       ? 'bg-black text-white border-black'
                       : 'bg-white text-[#444444] border-black/20 hover:border-black'

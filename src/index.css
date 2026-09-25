@@ -10,12 +10,23 @@
 
 :root {
   --color-primary: #111111;
+  --color-accent: #FF5C00;
   --color-bg-light: #fbfbfd;
   --color-card-light: #ffffff;
   --color-text-main: #111111;
   --color-text-muted: #666666;
   --color-border-subtle: rgba(0, 0, 0, 0.08);
   --color-border-hover: rgba(0, 0, 0, 0.18);
+}
+
+::selection {
+  background-color: #FF5C00;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #FF5C00;
+  color: #ffffff;
 }
 
 body {
