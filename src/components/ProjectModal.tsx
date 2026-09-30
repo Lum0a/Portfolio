@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, ArrowUpRight, Check, Tag, BarChart3 } from 'lucide-react';
+import { ArrowUpRight, X } from 'lucide-react';
 import { Project } from '../types';
 
 interface ProjectModalProps {
@@ -15,6 +15,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 }) => {
   if (!project) return null;
 
+  const sections = [
+    { title: 'Ziel', content: project.sections.goal },
+    { title: 'Kontext', content: project.sections.context },
+    { title: 'Vorgehen', content: project.sections.approach },
+    { title: 'Ergebnis', content: project.sections.result },
+  ];
+
   return (
     <div
       id="project-modal-backdrop"
@@ -23,99 +30,55 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
     >
       <div
         id="project-modal-container"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
         className="bg-white border border-black/10 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative text-[#111111]"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-5 right-5 z-20 w-10 h-10 rounded-full bg-white/80 border border-black/10 flex items-center justify-center text-[#111111] hover:bg-black hover:text-white transition-colors cursor-pointer shadow-sm"
           id="close-project-modal"
+          aria-label="Projektdetails schließen"
         >
           <X className="w-4 h-4" />
         </button>
 
-        {/* Project Image Banner */}
-        <div className="relative h-64 sm:h-80 w-full overflow-hidden rounded-t-3xl bg-neutral-100">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-          <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
-            <span className="px-3.5 py-1.5 rounded-full bg-black text-white font-bold text-xs uppercase tracking-wider">
-              {project.client}
-            </span>
-            {project.year && (
-              <span className="text-xs font-mono text-[#666666] bg-white/90 px-3 py-1 rounded-full border border-black/10">
-                {project.year}
+        <div className="p-6 pt-16 sm:p-10 sm:pt-16 space-y-8">
+          <header className="space-y-3">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#666666]">
+                {project.category}
               </span>
-            )}
-          </div>
-        </div>
-
-        {/* Modal Content */}
-        <div className="p-6 sm:p-10 space-y-6">
-          <div>
-            <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#666666]">
-              {project.category}
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] mt-1 font-display">
+              <span className="px-2.5 py-1 rounded-full bg-black/[0.04] text-[#555555] text-[10px] uppercase tracking-wider">
+                {project.status}
+              </span>
+            </div>
+            <h2
+              id="project-modal-title"
+              className="text-2xl sm:text-3xl font-bold text-[#111111] font-display"
+            >
               {project.title}
             </h2>
+            <p className="text-[#666666] text-base leading-relaxed font-light">
+              {project.description}
+            </p>
+          </header>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            {sections.map((section) => (
+              <section key={section.title} className="space-y-2">
+                <h3 className="text-xs font-semibold text-[#111111] uppercase tracking-widest">
+                  {section.title}
+                </h3>
+                <p className="text-sm text-[#666666] leading-relaxed font-light">
+                  {section.content}
+                </p>
+              </section>
+            ))}
           </div>
 
-          <p className="text-[#666666] text-base leading-relaxed font-light">
-            {project.description}
-          </p>
-
-          {/* Meta Details */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4 border-y border-black/10">
-            {project.metrics && (
-              <div className="flex items-center gap-3">
-                <BarChart3 className="w-4 h-4 text-black" />
-                <div>
-                  <div className="text-[10px] uppercase tracking-widest text-[#888888]">Messbarer Erfolg</div>
-                  <div className="text-sm font-semibold text-[#111111]">{project.metrics}</div>
-                </div>
-              </div>
-            )}
-            <div className="flex items-center gap-3">
-              <Tag className="w-4 h-4 text-black" />
-              <div>
-                <div className="text-[10px] uppercase tracking-widest text-[#888888]">Kategorie</div>
-                <div className="text-sm font-semibold text-[#111111]">{project.tags.join(', ')}</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Key Deliverables */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-semibold text-[#111111] uppercase tracking-widest">
-              Erbrachte Leistungen
-            </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#555555]">
-              <div className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-black" />
-                <span>Ganzheitliche Produkt- & Formkonzeption</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-black" />
-                <span>Class-A 3D-CAD Flächenmodellierung</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-black" />
-                <span>CMF-Spezifikation (Farbe, Material, Finish)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-black" />
-                <span>DFM-Optimierung & Werkzeugabstimmung</span>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Footer inside Modal */}
           <div className="pt-6 border-t border-black/10 flex flex-wrap items-center justify-between gap-4">
             <button
               onClick={() => {
@@ -124,7 +87,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               }}
               className="px-8 py-3.5 rounded-full bg-black text-white font-bold text-xs uppercase tracking-widest hover:bg-[#222222] transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
             >
-              <span>Ähnliches Projekt anfragen</span>
+              <span>Kontakt aufnehmen</span>
               <ArrowUpRight className="w-4 h-4" />
             </button>
             <button

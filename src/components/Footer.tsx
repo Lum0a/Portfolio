@@ -22,23 +22,23 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
   return (
     <footer
       id="main-footer"
-      className="relative z-10 border-t border-black/10 py-16 px-6 md:px-12 max-w-7xl mx-auto text-[#666666]"
+      className="relative z-10 my-10 border-t border-white/15 py-16 px-6 md:px-12 max-w-7xl mx-auto text-white/70"
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start justify-between">
         {/* Left Column: Brand & Bio */}
         <div className="md:col-span-5 space-y-4">
           <div className="flex items-center gap-3">
-            <span className="text-xl font-bold tracking-tight text-[#111111] font-display">
+            <span className="text-xl font-bold tracking-tight text-white font-display">
               /logo
             </span>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-[#888888] font-medium pl-3 border-l border-black/10">
+            <span className="text-[10px] uppercase tracking-[0.25em] text-white/55 font-medium pl-3 border-l border-white/20">
               Bastian Franke
             </span>
           </div>
-          <p className="text-xs sm:text-sm text-[#666666] max-w-sm leading-relaxed font-light">
+          <p className="text-xs sm:text-sm text-white/65 max-w-sm leading-relaxed font-light">
             Senior Produktdesigner für ganzheitliches Hardware- & Industriedesign, Class-A 3D-CAD und Serienüberführung.
           </p>
-          <div className="pt-2 text-[11px] text-[#888888] font-mono">
+          <div className="pt-2 text-[11px] text-white/45 font-mono">
             © {new Date().getFullYear()} Bastian Franke. Alle Rechte vorbehalten.
           </div>
         </div>
@@ -46,40 +46,40 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
         {/* Middle Column: Quick Links */}
         <div className="md:col-span-4 grid grid-cols-2 gap-8 text-xs font-medium uppercase tracking-widest">
           <div className="space-y-3">
-            <span className="text-[10px] text-[#888888] font-bold block mb-4">Navigation</span>
+            <span className="text-[10px] text-white/45 font-bold block mb-4">Navigation</span>
             <button
               onClick={() => scrollToSection('studio-section')}
-              className="block text-left text-[#555555] hover:text-black transition-colors cursor-pointer"
+              className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
             >
               Mein Studio
             </button>
             <button
               onClick={() => scrollToSection('work-section')}
-              className="block text-left text-[#555555] hover:text-black transition-colors cursor-pointer"
+              className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
             >
               Meine Arbeiten
             </button>
             <button
               onClick={() => scrollToSection('resume-section')}
-              className="block text-left text-[#555555] hover:text-black transition-colors cursor-pointer"
+              className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
             >
               Lebenslauf
             </button>
             <button
               onClick={() => scrollToSection('process-section')}
-              className="block text-left text-[#555555] hover:text-black transition-colors cursor-pointer"
+              className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
             >
               Arbeitsweise
             </button>
           </div>
 
           <div className="space-y-3">
-            <span className="text-[10px] text-[#888888] font-bold block mb-4">Connect</span>
+            <span className="text-[10px] text-white/45 font-bold block mb-4">Connect</span>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-[#555555] hover:text-black transition-colors"
+              className="block text-white/70 hover:text-white transition-colors"
             >
               LinkedIn
             </a>
@@ -87,7 +87,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-[#555555] hover:text-black transition-colors"
+              className="block text-white/70 hover:text-white transition-colors"
             >
               X / Twitter
             </a>
@@ -95,7 +95,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-[#555555] hover:text-black transition-colors"
+              className="block text-white/70 hover:text-white transition-colors"
             >
               GitHub
             </a>
@@ -107,10 +107,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
           <button
             onClick={scrollToTop}
             id="footer-scroll-top-btn"
-            className="group flex items-center gap-3 text-xs uppercase tracking-widest text-[#555555] hover:text-black transition-colors cursor-pointer"
+            className="group flex items-center gap-3 text-xs uppercase tracking-widest text-white/70 hover:text-white transition-colors cursor-pointer"
           >
             <span>Nach oben</span>
-            <span className="w-10 h-10 rounded-full border border-black/15 flex items-center justify-center group-hover:border-black group-hover:text-black transition-all duration-300 shadow-xs">
+            <span className="w-10 h-10 rounded-full border border-white/25 flex items-center justify-center group-hover:border-white transition-all duration-300 shadow-xs">
               <ArrowUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
             </span>
           </button>

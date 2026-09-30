@@ -1,16 +1,16 @@
 export interface Project {
   id: string;
-  client: string;
   category: string;
   title: string;
   description: string;
-  image: string;
-  tags: string[];
-  metrics?: string;
-  year?: string;
+  status: string;
+  sections: {
+    goal: string;
+    context: string;
+    approach: string;
+    result: string;
+  };
 }
-
-export type SceneMode = 'scroll' | 'orbit' | 'auto';
 
 export interface ResumeExperience {
   period: string;

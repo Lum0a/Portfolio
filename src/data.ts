@@ -9,48 +9,69 @@ import {
 
 export const PROJECTS: Project[] = [
   {
-    id: 'aura-one',
-    client: 'AURA AUDIO',
-    category: 'Akustik-Hardware & Minimalismus',
-    title: 'Aura One – Minimalistischer Smart Speaker',
-    description: 'Konzipiert nach dem Grundsatz reduzierter Formgebung: Sandgestrahltes Aluminiumgehäuse, taktiles Drehrad mit Rändelung und mikroperforiertes Akustikgitter.',
-    image: './images/product-speaker.jpg',
-    tags: ['Industrial Design', 'CNC-Aluminium', 'Akustik', 'CMF'],
-    metrics: 'iF Design Award 2025',
-    year: '2025'
+    id: 'mandible',
+    category: 'Ergonomie & Gartengerät',
+    title: 'Mandible – ergonomische Gartenschere',
+    description: 'Eine Gartenschere, die die natürliche Kraftlinie des Arms nutzt: Mandible ersetzt die übliche Quetschkraft durch eine Zugbewegung über einen Abzug.',
+    status: 'Konzept',
+    sections: {
+      goal: 'Die klassische Gartenschere ergonomisch hinterfragen und die Kraftübertragung an die natürliche Bewegung des Arms anpassen.',
+      context: 'Bionische Inspiration durch die Mandibeln von Ameisen; im Mittelpunkt steht die Zugbewegung statt der üblichen Quetschkraft.',
+      approach: 'Beobachtung klassischer Gartenscheren, Ergonomierecherche, Vergleich angrenzender Greifhilfen, Materialvergleich, Skizzen, CAD und Modellprototypen.',
+      result: 'Pistolengriff mit etwa 20° Neigung, langer Abzug parallel zum Unterarm und griffige TPE-Oberfläche.'
+    }
   },
   {
-    id: 'lumina-s',
-    client: 'STUDIO LICHTFORM',
-    category: 'Leuchtendesign & Skulpturale Ästhetik',
-    title: 'Lumina S – Skulpturale Arbeitsplatzleuchte',
-    description: 'Fließende organische Übergänge treffen auf präzise Reflektortechnologie. Aus einem einzigen Strangpressprofil gefräst, mit integriertem kapazitiven Touch-Dimmer.',
-    image: './images/product-luminaire.jpg',
-    tags: ['Leuchtendesign', 'Aluminium-Strangpressen', 'Optik-Design', 'Touch-Interface'],
-    metrics: 'German Design Award Nominee',
-    year: '2024'
+    id: 'bambustry-gartentool',
+    category: 'Systemdesign & Material',
+    title: 'Modulares Gartentool-System – Bambus als Systemerweiterung für GARDENA',
+    description: 'Ein modulares Gartengeräte-System aus Bambus mit werkzeugloser Kupplung für Griffe und Verlängerungen.',
+    status: 'Konzept',
+    sections: {
+      goal: 'Eine sichere, starre und leichte Verbindung für modulare Gartengeräte entwickeln.',
+      context: 'Bambus wird als Alternative zu klassischen Stielmaterialien und als Erweiterung eines bestehenden Systems untersucht.',
+      approach: 'Materialvergleich, Analyse der bestehenden Schraubklemmung, Übertragung des Einrastprinzips von Gartenschlauchkupplungen und Entwicklung eines Material- und Farbkonzepts.',
+      result: 'Vorgeschlagen wird ein beidseitig modulares System aus Bambusstiel, Kupplung sowie wechselbaren Griff- und Verlängerungsmodulen.'
+    }
   },
   {
-    id: 'apex-chrono',
-    client: 'CHRONO LABS',
-    category: 'Wearable Tech & Präzisionsmechanik',
-    title: 'Apex Chrono – Titan-Smartwatch der nächsten Generation',
-    description: 'Monolithisches Grade-5-Titangehäuse mit kratzfester DLC-Beschichtung. Ergonomisch gewölbter Sensorboden für ganztägigen Tragekomfort und maximale Signalgenauigkeit.',
-    image: './images/product-wearable.jpg',
-    tags: ['Wearable Architecture', 'Titan Grad 5', 'Biometrie', 'Ergonomie'],
-    metrics: 'Red Dot: Best of the Best',
-    year: '2024'
+    id: 'kaguya',
+    category: 'Leuchtendesign & Systemdesign',
+    title: 'Kaguya – modulare Arbeitsplatzleuchte aus Bambus',
+    description: 'Eine reduzierte Arbeitsplatzleuchte mit Bambus-Tragarm, integrierter Kabelführung und geschlossenen Friktionsgelenken.',
+    status: 'Konzept',
+    sections: {
+      goal: 'Die visuelle Unruhe klassischer Arbeitsplatzleuchten durch ein geschlossenes, ruhiges System reduzieren.',
+      context: 'Büro- und Workspace-Design mit biophilem Ansatz und konstruktiver Nutzung der hohlen Bambusstruktur.',
+      approach: 'Analyse von Tragstruktur und Kabelführung; Entwicklung geschlossener zylindrischer Friktionsgelenke sowie Überlegungen zu Materialität und Skalierung.',
+      result: 'Verdeckte Kabelführung, fließender Übergang von Tragarm zu Gelenkkörper und eine skalierbare Produktfamilie.'
+    }
   },
   {
-    id: 'orbit-control',
-    client: 'ORBIT CONTROLS',
-    category: 'Creative Tooling & Haptisches Feedback',
-    title: 'Orbit Control – Modulares Editing-Interface',
-    description: 'Präzisions-Eingabegerät für Coloristen und Audio-Engineers. Magnetisch gelagerte Drehgeber mit anpassbarem Drehmoment und OLED-Statusanzeigen pro Kanal.',
-    image: './images/product-controller.jpg',
-    tags: ['Hardware Design', 'Haptik & Encoder', 'Rapid Prototyping', 'CNC'],
-    metrics: '+65% Workflow-Speed',
-    year: '2023'
+    id: 'leica-ccar',
+    category: 'UXDD & AR-Handwerkzeug',
+    title: 'Leica CCAR – AR-Controller für Planung und Ausführung',
+    description: 'Ein Controller, der präzises Lasermessen mit AR-Interaktion verbindet und Medienbrüche auf der Baustelle reduzieren soll.',
+    status: 'Konzept',
+    sections: {
+      goal: 'Messen, Markieren und visuelle Kommunikation zwischen Baustelle und Planung in einem Werkzeug verbinden.',
+      context: 'Baustellenkommunikation zwischen Planung und Ausführung; Personas sind eine Architektin und ein Elektriker.',
+      approach: 'Analyse klassischer Messlaser, Ableitung von Must-haves, Skizzen und Modelle sowie Abgleich von Form und Ergonomie mit der Leica-iCON-Designsprache.',
+      result: 'Zweiteiliger Controller mit Messlaserbereich, ergonomischem Griff, OLED, Navigation, Messtasten und AR-Trigger.'
+    }
+  },
+  {
+    id: 'trinit-square-meets-wire',
+    category: 'Möbelstruktur & Prototyping',
+    title: 'Trinit – Square Meets Wire',
+    description: 'Ein Stuhl aus verdrehten Holzstreben, Metallringen und Seilen, dessen Stabilität aus der Spannung der Materialien entsteht.',
+    status: '1:1-Prototyp',
+    sections: {
+      goal: 'Eine dreidimensionale Sitzstruktur mit begrenztem Materialverbrauch und ohne komplexe Holzverbindungen entwickeln.',
+      context: 'Nachhaltigkeits- und Möbelstrukturprojekt im 3. Semester an der FH Aachen.',
+      approach: 'Skizzen, 1:5-Modelle, Experimente mit Biegedraht, Holzstreben, Metallringen und Seil, 1:1-Bau, Sitztests, Optimierung sowie Digitalisierung in Rhino 8 und Shapr3D.',
+      result: 'Finaler Stuhl mit elf Holzstreben, Metallringen, 4-mm-Hanfseil, 550-mm-Sitzhöhe sowie Esche, Stoff und Hartöl.'
+    }
   }
 ];
 

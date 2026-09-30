@@ -24,7 +24,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
   return (
     <section
       id="resume-section"
-      className="relative py-20 px-6 md:px-12 max-w-7xl mx-auto z-10"
+      className="relative py-14 px-5 sm:px-8 md:py-20 md:px-12 max-w-7xl mx-auto"
     >
       <div className="space-y-16">
         {/* Section Header */}
@@ -234,4 +234,3 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
     </section>
   );
 };
-

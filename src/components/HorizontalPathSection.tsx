@@ -42,7 +42,7 @@ export const HorizontalPathSection: React.FC = () => {
   return (
     <section
       id="process-section"
-      className="relative py-20 px-6 md:px-12 max-w-7xl mx-auto z-10"
+      className="relative py-14 px-5 sm:px-8 md:py-20 md:px-12 max-w-7xl mx-auto"
     >
       <div className="space-y-12">
         {/* Section Header with Controls */}
@@ -136,7 +136,7 @@ export const HorizontalPathSection: React.FC = () => {
         <div
           ref={scrollContainerRef}
           onScroll={handleScroll}
-          className="flex gap-6 overflow-x-auto pb-6 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth -mx-6 px-6 md:-mx-12 md:px-12"
+          className="flex gap-6 overflow-x-auto pb-6 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth -mx-5 px-5 sm:-mx-8 sm:px-8 md:-mx-12 md:px-12"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {DESIGN_PATH_STEPS.map((step, idx) => (
@@ -224,4 +224,3 @@ export const HorizontalPathSection: React.FC = () => {
     </section>
   );
 };
-

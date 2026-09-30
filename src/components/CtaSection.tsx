@@ -11,7 +11,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenContact }) => {
       id="cta-section"
       className="relative py-20 px-6 md:px-12 max-w-7xl mx-auto z-10"
     >
-      <div className="glass-panel-dark rounded-3xl p-8 sm:p-14 lg:p-20 relative overflow-hidden shadow-2xl">
+      <div className="relative overflow-hidden px-2 py-8 sm:px-8 sm:py-14 lg:px-12 lg:py-20">
         {/* Glow backdrop accent */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF5C00]/15 rounded-full blur-3xl pointer-events-none" />
 
