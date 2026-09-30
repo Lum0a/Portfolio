@@ -33,19 +33,10 @@ export interface ResumeSkillGroup {
   skills: string[];
 }
 
-export interface ResumeAward {
-  year: string;
-  title: string;
-  organization: string;
-  project: string;
-}
-
 export interface DesignPathStep {
   number: string;
   title: string;
   subtitle: string;
-  duration: string;
   description: string;
   deliverables: string[];
-  tools: string[];
 }
