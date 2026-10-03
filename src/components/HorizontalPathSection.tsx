@@ -3,9 +3,6 @@ import {
   ChevronLeft,
   ChevronRight,
   CheckCircle2,
-  Layers,
-  ArrowRight,
-  Clock,
   Compass
 } from 'lucide-react';
 import { DESIGN_PATH_STEPS } from '../data';
@@ -15,28 +12,46 @@ export const HorizontalPathSection: React.FC = () => {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
 
   const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const cardWidth = scrollContainerRef.current.clientWidth > 640 ? 440 : 310;
-      const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
-      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
+    const container = scrollContainerRef.current;
+    const firstCard = container?.firstElementChild;
+    if (!container || !(firstCard instanceof HTMLElement)) return;
+
+    const styles = window.getComputedStyle(container);
+    const gap = Number.parseFloat(styles.columnGap) || 0;
+    const scrollAmount = firstCard.getBoundingClientRect().width + gap;
+    container.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
   };
 
   const handleScroll = () => {
-    if (scrollContainerRef.current) {
-      const scrollLeft = scrollContainerRef.current.scrollLeft;
-      const cardWidth = scrollContainerRef.current.clientWidth > 640 ? 440 : 310;
-      const newIndex = Math.round(scrollLeft / cardWidth);
-      setActiveStepIndex(Math.min(Math.max(newIndex, 0), DESIGN_PATH_STEPS.length - 1));
-    }
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const containerCenter = container.getBoundingClientRect().left + container.clientWidth / 2;
+    const newIndex = Array.from(container.children).reduce((closestIndex, child, index, cards) => {
+      const closestCard = cards[closestIndex].getBoundingClientRect();
+      const currentCard = child.getBoundingClientRect();
+      const closestDistance = Math.abs(closestCard.left + closestCard.width / 2 - containerCenter);
+      const currentDistance = Math.abs(currentCard.left + currentCard.width / 2 - containerCenter);
+      return currentDistance < closestDistance ? index : closestIndex;
+    }, 0);
+    setActiveStepIndex(newIndex);
   };
 
   const scrollToStep = (index: number) => {
-    if (scrollContainerRef.current) {
-      const cardWidth = scrollContainerRef.current.clientWidth > 640 ? 440 : 310;
-      scrollContainerRef.current.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
-      setActiveStepIndex(index);
-    }
+    const container = scrollContainerRef.current;
+    const card = container?.children.item(index);
+    if (!container || !(card instanceof HTMLElement)) return;
+
+    const containerCenter = container.getBoundingClientRect().left + container.clientWidth / 2;
+    const cardRect = card.getBoundingClientRect();
+    container.scrollBy({
+      left: cardRect.left + cardRect.width / 2 - containerCenter,
+      behavior: 'smooth'
+    });
+    setActiveStepIndex(index);
   };
 
   return (
@@ -61,7 +76,7 @@ export const HorizontalPathSection: React.FC = () => {
               Der Designpfad.
             </h2>
             <p className="text-[#555555] text-base sm:text-lg font-light max-w-2xl leading-relaxed">
-              Vom initialen Lastenheft über haptische Funktionsmodelle bis zur werkzeuggerechten Fertigungsübergabe: Mein strukturierter Ablauf für herausragende Produkte.
+              Ich arbeite schrittweise: beobachten, hinterfragen, skizzieren, bauen, testen und weiterentwickeln.
             </p>
           </div>
 
@@ -160,10 +175,6 @@ export const HorizontalPathSection: React.FC = () => {
                     </span>
                   </div>
 
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/[0.04] border border-black/10 text-[11px] font-mono text-[#555555]">
-                    <Clock className="w-3 h-3 text-black" />
-                    {step.duration}
-                  </span>
                 </div>
 
                 <div className="space-y-2">
@@ -179,7 +190,7 @@ export const HorizontalPathSection: React.FC = () => {
               {/* Deliverables List */}
               <div className="space-y-3 pt-3 border-t border-black/10">
                 <span className="text-[10px] uppercase font-mono tracking-wider font-semibold text-[#888888] block">
-                  Meilensteine & Deliverables
+                  Im Fokus
                 </span>
                 <div className="space-y-2">
                   {step.deliverables.map((deliv, dIdx) => (
@@ -194,17 +205,6 @@ export const HorizontalPathSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Tools & Methods Footer */}
-              <div className="pt-3 border-t border-black/10 flex flex-wrap items-center gap-1.5">
-                {step.tools.map((tool, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="px-2.5 py-1 rounded-md bg-white border border-black/10 text-[11px] font-mono text-[#444444] shadow-2xs"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
             </div>
           ))}
         </div>
@@ -213,11 +213,11 @@ export const HorizontalPathSection: React.FC = () => {
         <div className="flex items-center justify-between text-xs text-[#777777] pt-2">
           <div className="flex items-center gap-2">
             <Compass className="w-3.5 h-3.5 text-black" />
-            <span>Horizontale Navigation per Wischgeste, Mausrad oder Pfeiltasten</span>
+            <span>Vom Beobachten zum Prototyp</span>
           </div>
           <div className="flex items-center gap-1">
-            <span className="font-semibold text-black">End-to-End Begleitung:</span>
-            <span>Vom Konzept zur Nullserie</span>
+            <span className="font-semibold text-black">Vom ersten Gedanken:</span>
+            <span>zum ausgearbeiteten Entwurf</span>
           </div>
         </div>
       </div>

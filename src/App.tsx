@@ -5,6 +5,7 @@ import { StudioSection } from './components/StudioSection';
 import { CaseStudiesSection } from './components/CaseStudiesSection';
 import { ResumeSection } from './components/ResumeSection';
 import { HorizontalPathSection } from './components/HorizontalPathSection';
+import { SkillsSection } from './components/SkillsSection';
 import { CtaSection } from './components/CtaSection';
 import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
@@ -25,22 +26,17 @@ export default function App() {
         {/* Navigation Bar */}
         <Navbar onOpenContact={() => setIsContactOpen(true)} />
 
-        {/* Main Content Sections: 6 Distinct Blocks */}
         <main className="flex-grow space-y-12 sm:space-y-16">
-          {/* 1. Block: Start */}
           <HeroSection />
 
-          {/* 2. Block: Mein Studio (Philosophie & Schwerpunkte) */}
-          <StudioSection />
-
           <div className="relative z-10 w-full bg-[#fbfbfd] shadow-[0_32px_90px_rgba(0,0,0,0.24)]">
-            {/* 3. Block: Arbeiten, Lebenslauf und Designpfad */}
             <CaseStudiesSection onOpenContact={() => setIsContactOpen(true)} />
-            <ResumeSection onOpenContact={() => setIsContactOpen(true)} />
+            <StudioSection />
             <HorizontalPathSection />
+            <SkillsSection />
+            <ResumeSection />
           </div>
 
-          {/* 6. Block: Anfrageblock (Call to Action & Kontaktaufnahme) */}
           <CtaSection onOpenContact={() => setIsContactOpen(true)} />
         </main>
 

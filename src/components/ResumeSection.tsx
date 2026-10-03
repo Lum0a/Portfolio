@@ -2,25 +2,15 @@ import React from 'react';
 import {
   Briefcase,
   GraduationCap,
-  Award,
-  Wrench,
-  ArrowUpRight,
   Calendar,
   MapPin,
-  CheckCircle2
 } from 'lucide-react';
 import {
   RESUME_EXPERIENCES,
-  RESUME_EDUCATION,
-  RESUME_SKILL_GROUPS,
-  RESUME_AWARDS
+  RESUME_EDUCATION
 } from '../data';
 
-interface ResumeSectionProps {
-  onOpenContact: () => void;
-}
-
-export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) => {
+export const ResumeSection: React.FC = () => {
   return (
     <section
       id="resume-section"
@@ -33,7 +23,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C00]"></span>
               <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#FF5C00]">
-                WERDEGANG & QUALIFIKATION
+                AUSBILDUNG & PRAKTISCHE ERFAHRUNG
               </span>
             </div>
             <h2
@@ -43,20 +33,10 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
               Lebenslauf.
             </h2>
             <p className="text-[#555555] text-base sm:text-lg font-light max-w-2xl leading-relaxed">
-              Fundierte Industrieerfahrung von der ersten Skizze über Class-A CAD bis zur Werkzeugabstimmung und weltweiten Serienfertigung.
+              Mein schulischer Weg und meine bisherigen praktischen Erfahrungen.
             </p>
           </div>
 
-          {/* Quick Action Button */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={onOpenContact}
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white text-xs uppercase tracking-widest font-semibold hover:bg-[#FF5C00] transition-all duration-300 shadow-sm cursor-pointer"
-            >
-              <span>Vollständige Vita anfordern</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </button>
-          </div>
         </div>
 
         {/* 2-Column Grid: Timeline on Left, Education/Skills/Awards on Right */}
@@ -68,7 +48,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
                 <Briefcase className="w-4 h-4" />
               </div>
               <h3 className="text-xl font-bold text-[#111111] font-display">
-                Berufserfahrung
+                Praktische Erfahrungen
               </h3>
             </div>
 
@@ -96,29 +76,18 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
                     {/* Company & Location */}
                     <div className="flex items-center gap-2 text-xs text-[#666666] font-medium">
                       <span className="text-black font-semibold">{exp.company}</span>
-                      <span>•</span>
-                      <span className="inline-flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-[#888888]" />
-                        {exp.location}
-                      </span>
+                      {exp.location && (
+                        <span className="inline-flex items-center gap-1">
+                          <MapPin className="w-3 h-3 text-[#888888]" />
+                          {exp.location}
+                        </span>
+                      )}
                     </div>
 
                     <p className="text-sm text-[#555555] font-light leading-relaxed">
                       {exp.description}
                     </p>
 
-                    {/* Highlights */}
-                    <div className="pt-2 space-y-1.5">
-                      {exp.highlights.map((item, hIdx) => (
-                        <div
-                          key={hIdx}
-                          className="flex items-start gap-2 text-xs text-[#444444]"
-                        >
-                          <CheckCircle2 className="w-3.5 h-3.5 text-black shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </div>
               ))}
@@ -134,7 +103,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
                   <GraduationCap className="w-4 h-4" />
                 </div>
                 <h3 className="text-lg font-bold text-[#111111] font-display">
-                  Akademische Ausbildung
+                  Schulische Ausbildung
                 </h3>
               </div>
 
@@ -161,73 +130,6 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenContact }) =
               </div>
             </div>
 
-            {/* Core Competencies & Tools */}
-            <div className="glass-panel rounded-3xl p-7 space-y-5 shadow-xs">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-black/[0.04] border border-black/10 flex items-center justify-center text-black">
-                  <Wrench className="w-4 h-4" />
-                </div>
-                <h3 className="text-lg font-bold text-[#111111] font-display">
-                  Kernkompetenzen & Toolstack
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                {RESUME_SKILL_GROUPS.map((group, gIdx) => (
-                  <div key={gIdx} className="space-y-2">
-                    <span className="text-[10px] uppercase font-mono tracking-wider font-semibold text-[#888888] block">
-                      {group.category}
-                    </span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {group.skills.map((skill, sIdx) => (
-                        <span
-                          key={sIdx}
-                          className="px-2.5 py-1 rounded-lg bg-white border border-black/10 text-xs font-medium text-[#222222] shadow-2xs hover:border-black/30 transition-colors"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Awards & Auszeichnungen */}
-            <div className="glass-panel rounded-3xl p-7 space-y-5 shadow-xs">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-[#FF5C00]/10 border border-[#FF5C00]/20 flex items-center justify-center text-[#FF5C00]">
-                  <Award className="w-4 h-4" />
-                </div>
-                <h3 className="text-lg font-bold text-[#111111] font-display">
-                  Auszeichnungen & Awards
-                </h3>
-              </div>
-
-              <div className="space-y-2.5">
-                {RESUME_AWARDS.map((award, aIdx) => (
-                  <div
-                    key={aIdx}
-                    className="p-3.5 rounded-2xl bg-black/[0.02] border border-black/5 flex items-start justify-between gap-3"
-                  >
-                    <div className="space-y-0.5">
-                      <div className="text-xs font-bold text-[#111111]">
-                        {award.title}
-                      </div>
-                      <div className="text-[11px] text-[#666666]">
-                        {award.project}
-                      </div>
-                      <div className="text-[10px] font-mono text-[#888888]">
-                        {award.organization}
-                      </div>
-                    </div>
-                    <span className="px-2.5 py-0.5 rounded-full bg-[#FF5C00] text-white text-[10px] font-mono font-semibold shrink-0 shadow-xs">
-                      {award.year}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>

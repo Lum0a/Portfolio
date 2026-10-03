@@ -57,20 +57,31 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-9 rounded-full border border-white/15 bg-black/15 px-6 py-3 text-xs font-medium uppercase tracking-widest text-white/85 backdrop-blur-xl">
+        <nav className="hidden md:flex items-center gap-5 rounded-full border border-white/15 bg-black/15 px-5 py-3 text-[11px] font-medium uppercase tracking-widest text-white/85 backdrop-blur-xl">
+          <button
+            onClick={() => scrollToSection('work-section')}
+            className="hover:text-black transition-colors cursor-pointer"
+          >
+            Arbeiten
+          </button>
           <button
             onClick={() => scrollToSection('studio-section')}
             className="hover:text-black transition-colors cursor-pointer"
             id="nav-link-studio"
           >
-            Mein Studio
+            Über mich
           </button>
           <button
-            onClick={() => scrollToSection('work-section')}
+            onClick={() => scrollToSection('process-section')}
             className="hover:text-black transition-colors cursor-pointer"
-            id="nav-link-work"
           >
-            Meine Arbeiten
+            Arbeitsweise
+          </button>
+          <button
+            onClick={() => scrollToSection('skills-section')}
+            className="hover:text-black transition-colors cursor-pointer"
+          >
+            Fähigkeiten
           </button>
           <button
             onClick={() => scrollToSection('resume-section')}
@@ -78,13 +89,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             id="nav-link-resume"
           >
             Lebenslauf
-          </button>
-          <button
-            onClick={() => scrollToSection('process-section')}
-            className="hover:text-black transition-colors cursor-pointer"
-            id="nav-link-process"
-          >
-            Arbeitsweise
           </button>
           <button
             onClick={onOpenContact}
@@ -112,7 +116,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-full bg-white border border-black/10 text-black hover:bg-black/5 transition-colors cursor-pointer"
             id="mobile-menu-toggle"
-            aria-label="Navigation öffnen"
+            aria-label={mobileMenuOpen ? 'Navigation schließen' : 'Navigation öffnen'}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -127,28 +132,34 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
         >
           <nav className="flex flex-col space-y-3 text-xs font-semibold uppercase tracking-widest text-[#555555]">
             <button
-              onClick={() => scrollToSection('studio-section')}
-              className="text-left py-2 hover:text-black"
-            >
-              Mein Studio
-            </button>
-            <button
               onClick={() => scrollToSection('work-section')}
               className="text-left py-2 hover:text-black"
             >
-              Meine Arbeiten
+              Arbeiten
             </button>
             <button
-              onClick={() => scrollToSection('resume-section')}
+              onClick={() => scrollToSection('studio-section')}
               className="text-left py-2 hover:text-black"
             >
-              Lebenslauf
+              Über mich
             </button>
             <button
               onClick={() => scrollToSection('process-section')}
               className="text-left py-2 hover:text-black"
             >
               Arbeitsweise
+            </button>
+            <button
+              onClick={() => scrollToSection('skills-section')}
+              className="text-left py-2 hover:text-black"
+            >
+              Fähigkeiten
+            </button>
+            <button
+              onClick={() => scrollToSection('resume-section')}
+              className="text-left py-2 hover:text-black"
+            >
+              Lebenslauf
             </button>
             <button
               onClick={() => {

@@ -21,7 +21,7 @@ export const HeroSection: React.FC = () => {
           {/* Subtle Telemetry Pill */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/20 border border-white/20 text-[10px] uppercase tracking-[0.25em] text-white/80 backdrop-blur-md shadow-xs">
             <span className="w-2 h-2 rounded-full bg-[#FFB347] animate-pulse shadow-[0_0_8px_rgba(255,179,71,0.6)]"></span>
-            <span>Verfügbar für ausgewählte Mandate 2026</span>
+            <span>Design · Fotografie · Programmierung · Film</span>
           </div>
 
           {/* Hero Title */}
@@ -29,9 +29,17 @@ export const HeroSection: React.FC = () => {
             id="hero-title"
             className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08] font-display"
           >
-            Bastian Franke. <br />
-            <span className="text-white/65">Produktdesigner.</span>
+            Bastian Franke.
           </h1>
+
+          <div className="max-w-2xl space-y-3">
+            <p className="text-lg sm:text-xl text-white/90 leading-relaxed">
+              Gestaltungstechnischer Assistent mit Schwerpunkt auf Design, Fotografie, Programmierung und Film.
+            </p>
+            <p className="text-sm sm:text-base text-white/70 leading-relaxed">
+              Ich entwickle Gestaltungskonzepte und Produkte von der ersten Idee bis zum Prototyp. Dabei verbinde ich Recherche, Skizzen und Materialtests mit digitaler Gestaltung und praktischem Modellbau.
+            </p>
+          </div>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -40,7 +48,7 @@ export const HeroSection: React.FC = () => {
               id="hero-btn-portfolio"
               className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#FF5C00] hover:text-white transition-all duration-300 shadow-md cursor-pointer active:scale-95"
             >
-              <span>Portfolio ansehen</span>
+              <span>Arbeiten ansehen</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
 
@@ -50,7 +58,7 @@ export const HeroSection: React.FC = () => {
               className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white/10 border border-white/25 text-white font-medium text-xs uppercase tracking-widest hover:bg-white/20 transition-all duration-300 cursor-pointer shadow-xs backdrop-blur-md"
             >
               <Compass className="w-3.5 h-3.5 text-white/70 transition-colors" />
-              <span>Mehr erfahren</span>
+              <span>Mehr über mich</span>
             </button>
           </div>
 
@@ -79,7 +87,7 @@ export const HeroSection: React.FC = () => {
             id="hero-philosophy-quote"
             className="text-sm sm:text-base text-white/80 max-w-xl leading-relaxed text-left md:text-right font-light"
           >
-            „Design ist kein Dekor, sondern die präzise Übersetzung komplexer Technologien in intuitive, inspirierende Erlebnisse.“
+            „Vom Beobachten und Skizzieren bis zum greifbaren Prototyp.“
           </p>
         </div>
       </div>

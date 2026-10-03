@@ -16,9 +16,8 @@ export interface ResumeExperience {
   period: string;
   role: string;
   company: string;
-  location: string;
+  location?: string;
   description: string;
-  highlights: string[];
 }
 
 export interface ResumeEducation {

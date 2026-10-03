@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             </span>
           </div>
           <p className="text-xs sm:text-sm text-white/65 max-w-sm leading-relaxed font-light">
-            Senior Produktdesigner für ganzheitliches Hardware- & Industriedesign, Class-A 3D-CAD und Serienüberführung.
+            Gestaltungstechnischer Assistent mit Schwerpunkten in Design, Fotografie, Programmierung und Film.
           </p>
           <div className="pt-2 text-[11px] text-white/45 font-mono">
             © {new Date().getFullYear()} Bastian Franke. Alle Rechte vorbehalten.
@@ -48,22 +48,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
           <div className="space-y-3">
             <span className="text-[10px] text-white/45 font-bold block mb-4">Navigation</span>
             <button
-              onClick={() => scrollToSection('studio-section')}
-              className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
-            >
-              Mein Studio
-            </button>
-            <button
               onClick={() => scrollToSection('work-section')}
               className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
             >
-              Meine Arbeiten
+              Arbeiten
             </button>
             <button
-              onClick={() => scrollToSection('resume-section')}
+              onClick={() => scrollToSection('studio-section')}
               className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
             >
-              Lebenslauf
+              Über mich
             </button>
             <button
               onClick={() => scrollToSection('process-section')}
@@ -71,34 +65,28 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             >
               Arbeitsweise
             </button>
+            <button
+              onClick={() => scrollToSection('skills-section')}
+              className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
+            >
+              Fähigkeiten
+            </button>
+            <button
+              onClick={() => scrollToSection('resume-section')}
+              className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
+            >
+              Lebenslauf
+            </button>
           </div>
 
           <div className="space-y-3">
-            <span className="text-[10px] text-white/45 font-bold block mb-4">Connect</span>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-white/70 hover:text-white transition-colors"
+            <span className="text-[10px] text-white/45 font-bold block mb-4">Kontakt</span>
+            <button
+              onClick={onOpenContact}
+              className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
             >
-              LinkedIn
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-white/70 hover:text-white transition-colors"
-            >
-              X / Twitter
-            </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-white/70 hover:text-white transition-colors"
-            >
-              GitHub
-            </a>
+              Projekt anfragen
+            </button>
           </div>
         </div>
 

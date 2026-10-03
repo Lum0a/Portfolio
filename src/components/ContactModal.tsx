@@ -11,7 +11,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
   const [formState, setFormState] = useState({
     name: '',
     email: '',
-    scope: 'Digitales Produkt / UI/UX',
+    scope: 'Produkt- und Industriedesign',
     message: '',
   });
 
@@ -50,17 +50,17 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 <span>Projektanfrage</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] font-display">
-                Lassen Sie uns sprechen.
+                Erzähl mir von deinem Projekt.
               </h2>
               <p className="text-[#666666] text-sm font-light">
-                Beschreiben Sie kurz Ihre Vision. Ich antworte gewöhnlich innerhalb von 24 Stunden.
+                Worum geht es, in welcher Phase ist das Projekt und wobei suchst du Unterstützung?
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-xs font-medium text-[#666666] mb-1.5 uppercase tracking-wider">
-                  Ihr Name
+                  Dein Name
                 </label>
                 <input
                   type="text"
@@ -74,7 +74,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
               <div>
                 <label className="block text-xs font-medium text-[#666666] mb-1.5 uppercase tracking-wider">
-                  E-Mail Adresse
+                  Deine E-Mail-Adresse
                 </label>
                 <input
                   type="email"
@@ -88,28 +88,28 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
               <div>
                 <label className="block text-xs font-medium text-[#666666] mb-1.5 uppercase tracking-wider">
-                  Projektbereich
+                  Bereich
                 </label>
                 <select
                   value={formState.scope}
                   onChange={(e) => setFormState({ ...formState, scope: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-black/10 text-[#111111] focus:outline-none focus:border-black text-sm transition-colors cursor-pointer"
                 >
-                  <option value="Digitales Produkt / UI/UX">Digitales Produkt / UI/UX</option>
-                  <option value="3D & WebGL Erlebnis">3D & WebGL Erlebnis</option>
-                  <option value="Design System & Branding">Design System & Branding</option>
-                  <option value="Strategische Beratung">Strategische Beratung</option>
+                  <option value="Produkt- und Industriedesign">Produkt- und Industriedesign</option>
+                  <option value="Modellbau und Prototyping">Modellbau und Prototyping</option>
+                  <option value="Material- und Farbkonzept">Material- und Farbkonzept</option>
+                  <option value="Fotografie, Programmierung oder Film">Fotografie, Programmierung oder Film</option>
                 </select>
               </div>
 
               <div>
                 <label className="block text-xs font-medium text-[#666666] mb-1.5 uppercase tracking-wider">
-                  Ihre Nachricht
+                  Deine Nachricht
                 </label>
                 <textarea
                   rows={4}
                   required
-                  placeholder="Erzählen Sie mir von den Zielen, dem Zeitplan und den Erwartungen Ihres Projekts..."
+                  placeholder="Worum geht es, in welcher Phase ist das Projekt und wobei brauchst du Unterstützung?"
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-black/10 text-[#111111] placeholder-[#999999] focus:outline-none focus:border-black text-sm transition-colors resize-none"
@@ -135,7 +135,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 Vielen Dank, {formState.name}!
               </h3>
               <p className="text-[#666666] text-sm max-w-sm mx-auto">
-                Ihre Nachricht wurde erfolgreich übermittelt. Ich werde mich innerhalb der nächsten 24 Stunden bei Ihnen melden.
+                Deine Angaben sind aufgenommen. Ich freue mich darauf, mehr über dein Projekt zu erfahren.
               </p>
             </div>
             <button
