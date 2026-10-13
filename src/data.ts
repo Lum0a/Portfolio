@@ -11,8 +11,26 @@ export const PROJECTS: Project[] = [
     id: 'mandible',
     category: 'Ergonomie & Gartengerät',
     title: 'Mandible – ergonomische Gartenschere',
-    description: 'Eine Gartenschere, die die natürliche Kraftlinie des Arms nutzt: Mandible ersetzt die übliche Quetschkraft durch eine Zugbewegung über einen Abzug.',
+    description: 'Mandible ersetzt die übliche Quetschkraft durch eine Zugbewegung entlang der natürlichen Kraftlinie des Arms. Ein geneigter Pistolengriff und ein langer Abzug unterstützen eine ergonomische Handhabung.',
     status: 'Konzept',
+    images: [
+      {
+        src: '/images/projects/mandible-main.jpg',
+        alt: 'Gerenderter Entwurf der ergonomischen Gartenschere Mandible'
+      },
+      {
+        src: '/images/projects/mandible-detail.jpg',
+        alt: 'Entwurfsansicht der Gartenschere mit Handillustration'
+      },
+      {
+        src: '/images/projects/mandible-use.jpg',
+        alt: 'Illustration der ergonomischen Nutzung von Mandible'
+      },
+      {
+        src: '/images/projects/mandible-cad.jpg',
+        alt: 'Technische CAD-Ansicht der Gartenschere mit Maßen'
+      }
+    ],
     sections: {
       goal: 'Die klassische Gartenschere ergonomisch hinterfragen und die Kraftübertragung an die natürliche Bewegung des Arms anpassen.',
       context: 'Bionische Inspiration durch die Mandibeln von Ameisen; im Mittelpunkt steht die Zugbewegung statt der üblichen Quetschkraft.',
@@ -24,8 +42,26 @@ export const PROJECTS: Project[] = [
     id: 'bambustry-gartentool',
     category: 'Systemdesign & Material',
     title: 'Modulares Gartentool-System – Bambus als Systemerweiterung für GARDENA',
-    description: 'Ein modulares Gartengeräte-System aus Bambus mit werkzeugloser Kupplung für Griffe und Verlängerungen.',
+    description: 'Das System kombiniert Bambusstiele mit einer werkzeuglosen Kupplung für Gartengeräte. Wechselbare Griffe und Verlängerungen machen die Verbindung flexibel und alltagstauglich.',
     status: 'Konzept',
+    images: [
+      {
+        src: '/images/projects/bambustry-main.jpg',
+        alt: 'Render eines modularen Gartengeräts mit Bambusstiel'
+      },
+      {
+        src: '/images/projects/bambustry-tool.jpg',
+        alt: 'Gartentool mit Bambusstiel und modularer GARDENA-Kupplung'
+      },
+      {
+        src: '/images/projects/bambustry-handle.jpg',
+        alt: 'Detailrender der Verbindung zwischen Bambusstiel und Werkzeug'
+      },
+      {
+        src: '/images/projects/bambustry-side.jpg',
+        alt: 'Seitenansicht des modularen Gartengeräts'
+      }
+    ],
     sections: {
       goal: 'Eine sichere, starre und leichte Verbindung für modulare Gartengeräte entwickeln.',
       context: 'Bambus wird als Alternative zu klassischen Stielmaterialien und als Erweiterung eines bestehenden Systems untersucht.',
@@ -37,8 +73,26 @@ export const PROJECTS: Project[] = [
     id: 'kaguya',
     category: 'Leuchtendesign & Systemdesign',
     title: 'Kaguya – modulare Arbeitsplatzleuchte aus Bambus',
-    description: 'Eine reduzierte Arbeitsplatzleuchte mit Bambus-Tragarm, integrierter Kabelführung und geschlossenen Friktionsgelenken.',
+    description: 'Kaguya ist eine reduzierte Arbeitsplatzleuchte mit Bambus-Tragarm und integrierter Kabelführung. Geschlossene Friktionsgelenke verbinden eine ruhige Form mit flexibler Ausrichtung.',
     status: 'Konzept',
+    images: [
+      {
+        src: '/images/projects/kaguya-main.jpg',
+        alt: 'Prototyp der modularen Arbeitsplatzleuchte aus Bambus'
+      },
+      {
+        src: '/images/projects/kaguya-detail.jpg',
+        alt: 'Detailansicht des Leuchtenprototyps mit Bambusarm und Gelenk'
+      },
+      {
+        src: '/images/projects/kaguya-process.jpg',
+        alt: 'Fertigungs- und Lackierprozess der Arbeitsplatzleuchte'
+      },
+      {
+        src: '/images/projects/kaguya-joint.jpg',
+        alt: 'Technischer Schnitt durch das Gelenk des Leuchtenarms'
+      }
+    ],
     sections: {
       goal: 'Die visuelle Unruhe klassischer Arbeitsplatzleuchten durch ein geschlossenes, ruhiges System reduzieren.',
       context: 'Büro- und Workspace-Design mit biophilem Ansatz und konstruktiver Nutzung der hohlen Bambusstruktur.',
@@ -50,8 +104,26 @@ export const PROJECTS: Project[] = [
     id: 'leica-ccar',
     category: 'UXDD & AR-Handwerkzeug',
     title: 'Leica CCAR – AR-Controller für Planung und Ausführung',
-    description: 'Ein Controller, der präzises Lasermessen mit AR-Interaktion verbindet und Medienbrüche auf der Baustelle reduzieren soll.',
+    description: 'Der Leica CCAR verbindet präzises Lasermessen mit direkter AR-Interaktion auf der Baustelle. Ein ergonomischer Controller soll den Wechsel zwischen digitaler Planung und praktischer Ausführung vereinfachen.',
     status: 'Konzept',
+    images: [
+      {
+        src: '/images/projects/leica-main.jpg',
+        alt: 'Produktvisualisierung des Leica AR-Controllers'
+      },
+      {
+        src: '/images/projects/leica-detail.jpg',
+        alt: 'Detailansicht des Leica AR-Controllers'
+      },
+      {
+        src: '/images/projects/leica-side.jpg',
+        alt: 'Seitenansicht des Leica AR-Controllers'
+      },
+      {
+        src: '/images/projects/leica-top.jpg',
+        alt: 'Ansicht der Bedienelemente am Leica AR-Controller'
+      }
+    ],
     sections: {
       goal: 'Messen, Markieren und visuelle Kommunikation zwischen Baustelle und Planung in einem Werkzeug verbinden.',
       context: 'Baustellenkommunikation zwischen Planung und Ausführung; Personas sind eine Architektin und ein Elektriker.',
@@ -63,8 +135,22 @@ export const PROJECTS: Project[] = [
     id: 'trinit-square-meets-wire',
     category: 'Möbelstruktur & Prototyping',
     title: 'Trinit – Square Meets Wire',
-    description: 'Ein Stuhl aus verdrehten Holzstreben, Metallringen und Seilen, dessen Stabilität aus der Spannung der Materialien entsteht.',
+    description: 'Trinit ist ein Stuhl aus verdrehten Holzstreben, Metallringen und Seilen. Seine Stabilität entsteht aus dem Zusammenspiel und der Spannung der Materialien – umgesetzt als Prototyp im Maßstab 1:1.',
     status: '1:1-Prototyp',
+    images: [
+      {
+        src: '/images/projects/trinit-main.jpg',
+        alt: '1:1-Prototyp des Stuhls Trinit aus Holzstreben, Metallringen und Seilen'
+      },
+      {
+        src: '/images/projects/trinit-build.jpg',
+        alt: 'Ansicht des aufgebauten Trinit-Stuhls mit Sitz- und Rückenpolstern'
+      },
+      {
+        src: '/images/projects/trinit-detail.jpg',
+        alt: 'Detailansicht der gespannten Holz- und Seilstruktur des Stuhls'
+      }
+    ],
     sections: {
       goal: 'Eine dreidimensionale Sitzstruktur mit begrenztem Materialverbrauch und ohne komplexe Holzverbindungen entwickeln.',
       context: 'Nachhaltigkeits- und Möbelstrukturprojekt im 3. Semester an der FH Aachen.',

@@ -14,20 +14,20 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero-section"
-      className="relative min-h-[92vh] flex flex-col justify-between pt-36 pb-12 px-6 md:px-12 max-w-7xl mx-auto z-10 select-none text-white"
+      className="relative min-h-screen flex flex-col justify-between pt-36 pb-12 px-6 md:px-12 max-w-7xl mx-auto z-10 select-none text-white"
     >
       <div className="mt-4">
         <div className="max-w-4xl space-y-8">
           {/* Subtle Telemetry Pill */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/20 border border-white/20 text-[10px] uppercase tracking-[0.25em] text-white/80 backdrop-blur-md shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#FFB347] animate-pulse shadow-[0_0_8px_rgba(255,179,71,0.6)]"></span>
+            <span className="w-2 h-2 rounded-full bg-[#c3a04a] shadow-[0_0_8px_rgba(195,160,74,0.35)]"></span>
             <span>Design · Fotografie · Programmierung · Film</span>
           </div>
 
           {/* Hero Title */}
           <h1
             id="hero-title"
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08] font-display"
+            className="text-4xl sm:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.08] font-display"
           >
             Bastian Franke.
           </h1>
@@ -46,7 +46,7 @@ export const HeroSection: React.FC = () => {
             <button
               onClick={() => scrollToSection('work-section')}
               id="hero-btn-portfolio"
-              className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#FF5C00] hover:text-white transition-all duration-300 shadow-md cursor-pointer active:scale-95"
+              className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#c3a04a] text-[#11110f] font-semibold text-xs uppercase tracking-widest hover:bg-[#d3b25e] transition-all duration-300 shadow-md cursor-pointer active:scale-95"
             >
               <span>Arbeiten ansehen</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -55,7 +55,7 @@ export const HeroSection: React.FC = () => {
             <button
               onClick={() => scrollToSection('studio-section')}
               id="hero-btn-learnmore"
-              className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white/10 border border-white/25 text-white font-medium text-xs uppercase tracking-widest hover:bg-white/20 transition-all duration-300 cursor-pointer shadow-xs backdrop-blur-md"
+              className="group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white/[0.06] border border-white/20 text-white font-medium text-xs uppercase tracking-widest hover:bg-white/[0.12] transition-all duration-300 cursor-pointer shadow-xs backdrop-blur-md"
             >
               <Compass className="w-3.5 h-3.5 text-white/70 transition-colors" />
               <span>Mehr über mich</span>
@@ -85,7 +85,7 @@ export const HeroSection: React.FC = () => {
         <div className="md:col-span-8 flex justify-start md:justify-end">
           <p
             id="hero-philosophy-quote"
-            className="text-sm sm:text-base text-white/80 max-w-xl leading-relaxed text-left md:text-right font-light"
+            className="text-sm sm:text-base text-white/75 max-w-xl leading-relaxed text-left md:text-right font-light"
           >
             „Vom Beobachten und Skizzieren bis zum greifbaren Prototyp.“
           </p>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { PROJECTS } from '../data';
 import { Project } from '../types';
 import { ProjectModal } from './ProjectModal';
@@ -14,59 +14,73 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenCo
   return (
     <section
       id="work-section"
-      className="relative py-14 px-5 sm:px-8 md:py-20 md:px-12 max-w-7xl mx-auto"
+      className="relative w-full bg-black py-16 px-5 sm:px-8 md:py-24 md:px-12"
     >
-      <div className="space-y-16">
-        {/* Section Header */}
-        <div className="space-y-4 max-w-3xl">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C00]"></span>
-            <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#FF5C00]">
-              PORTFOLIO & PRODUKTDESIGN
+      <div className="mx-auto max-w-7xl space-y-16">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl space-y-4">
+            <span className="text-[10px] uppercase tracking-[0.25em] font-medium text-white/75">
+              MEINE ARBEIT
             </span>
+            <h2
+              id="work-heading"
+              className="text-4xl sm:text-5xl font-medium tracking-tight text-white font-display"
+            >
+              Fallstudien.
+            </h2>
+            <p className="max-w-xl text-base sm:text-lg text-white/75 font-light leading-relaxed">
+              Ich setze innovative Konzepte in die Realität um, die einen spürbaren Mehrwert und Veränderung bewirken.
+            </p>
           </div>
-          <h2
-            id="work-heading"
-            className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111111] font-display"
+
+          <button
+            type="button"
+            onClick={() => document.getElementById('project-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+            className="work-details-button inline-flex shrink-0 items-center justify-center gap-3 rounded-lg bg-[#f5f4f0] px-6 py-4 text-sm font-medium text-black transition-colors hover:bg-[#e7e4dc] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
-            Meine Arbeiten.
-          </h2>
-          <p className="text-[#555555] text-base sm:text-lg font-light leading-relaxed">
-            Fünf dokumentierte Studien- und Konzeptprojekte aus Produktdesign, Systemdesign und Prototyping.
-          </p>
+            <span>Details ansehen</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-black text-white">
+              <ArrowRight className="h-3 w-3" />
+            </span>
+          </button>
         </div>
 
-        {/* Text-only project overview */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div id="project-grid" className="grid scroll-mt-24 grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {PROJECTS.map((project) => (
             <button
               key={project.id}
               onClick={() => setSelectedProject(project)}
               type="button"
-              className="glass-panel glass-panel-hover rounded-3xl p-7 sm:p-8 group cursor-pointer transition-all duration-500 hover:-translate-y-1.5 flex flex-col text-left shadow-xs"
+              className="group flex flex-col text-left cursor-pointer"
               id={`project-card-${project.id}`}
               aria-label={`Details zu ${project.title} ansehen`}
             >
-              <div className="flex-1 space-y-4">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="text-[10px] uppercase tracking-wider font-semibold text-[#888888] font-mono">
+              {project.images?.length ? (
+                <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-white/[0.04]">
+                  <img
+                    src={project.images[0].src}
+                    alt={project.images[0].alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  />
+                </div>
+              ) : null}
+              <div className="pt-5">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-white/70">
                     {project.category}
-                  </span>
-                  <span className="shrink-0 px-2.5 py-1 rounded-full bg-black/[0.04] text-[#555555] text-[10px] uppercase tracking-wider">
-                    {project.status}
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111111] tracking-tight group-hover:text-[#FF5C00] transition-colors font-display">
-                  {project.title}
+                <h3 className="mt-3 text-lg font-medium text-white tracking-tight group-hover:text-[#e9cf7a] transition-colors font-display">
+                    {project.title}
                 </h3>
 
-                <p className="text-[#666666] text-sm leading-relaxed font-light">
+                <p className="mt-2 text-sm text-white/70 leading-relaxed font-light">
                   {project.description}
                 </p>
-
-                <div className="pt-4 border-t border-black/10 flex items-center justify-between text-xs text-[#444444]">
-                  <span className="font-semibold">Projektdetails</span>
+                <div className="mt-4 inline-flex items-center gap-2 text-xs font-medium text-white/80 group-hover:text-[#e9cf7a] transition-colors">
+                  <span>Projektdetails</span>
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </div>

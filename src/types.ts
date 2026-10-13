@@ -4,6 +4,10 @@ export interface Project {
   title: string;
   description: string;
   status: string;
+  images?: {
+    src: string;
+    alt: string;
+  }[];
   sections: {
     goal: string;
     context: string;

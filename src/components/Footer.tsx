@@ -60,16 +60,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               Über mich
             </button>
             <button
-              onClick={() => scrollToSection('process-section')}
+              onClick={() => scrollToSection('tools-section')}
               className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
             >
-              Arbeitsweise
-            </button>
-            <button
-              onClick={() => scrollToSection('skills-section')}
-              className="block text-left text-white/70 hover:text-white transition-colors cursor-pointer"
-            >
-              Fähigkeiten
+              Werkzeuge
             </button>
             <button
               onClick={() => scrollToSection('resume-section')}

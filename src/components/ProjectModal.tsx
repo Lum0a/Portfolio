@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowUpRight, X } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, X } from 'lucide-react';
 import { Project } from '../types';
 
 interface ProjectModalProps {
@@ -13,6 +13,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   onClose,
   onOpenContact,
 }) => {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  useEffect(() => {
+    setActiveImageIndex(0);
+  }, [project?.id]);
+
   if (!project) return null;
 
   const sections = [
@@ -21,6 +27,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
     { title: 'Vorgehen', content: project.sections.approach },
     { title: 'Ergebnis', content: project.sections.result },
   ];
+  const images = project.images ?? [];
+  const activeImage = images[activeImageIndex] ?? images[0];
+  const showPreviousImage = () => {
+    setActiveImageIndex((index) => (index - 1 + images.length) % images.length);
+  };
+  const showNextImage = () => {
+    setActiveImageIndex((index) => (index + 1) % images.length);
+  };
 
   return (
     <div
@@ -30,6 +44,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
     >
       <div
         id="project-modal-container"
+        data-scrollable
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-modal-title"
@@ -65,6 +80,69 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               {project.description}
             </p>
           </header>
+
+          {activeImage && (
+            <section
+              className="space-y-3"
+              aria-label={`Bilder zu ${project.title}`}
+              aria-roledescription="Diashow"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-black/5">
+                <img
+                  src={activeImage.src}
+                  alt={activeImage.alt}
+                  className="h-full w-full object-cover"
+                />
+                {images.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={showPreviousImage}
+                      aria-label="Vorheriges Projektbild"
+                      className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/50 bg-white/85 text-[#111111] shadow-sm backdrop-blur transition-colors hover:bg-white"
+                    >
+                      <ArrowLeft className="h-4 w-4" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={showNextImage}
+                      aria-label="Nächstes Projektbild"
+                      className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/50 bg-white/85 text-[#111111] shadow-sm backdrop-blur transition-colors hover:bg-white"
+                    >
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                    <span
+                      className="absolute bottom-3 right-3 rounded-full bg-black/65 px-3 py-1 text-[10px] font-medium tracking-widest text-white"
+                      aria-live="polite"
+                    >
+                      {String(activeImageIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+                    </span>
+                  </>
+                )}
+              </div>
+
+              {images.length > 1 && (
+                <div className="grid grid-cols-4 gap-2 sm:gap-3">
+                  {images.map((image, index) => (
+                    <button
+                      key={image.src}
+                      type="button"
+                      onClick={() => setActiveImageIndex(index)}
+                      aria-label={`Projektbild ${index + 1} anzeigen: ${image.alt}`}
+                      aria-pressed={index === activeImageIndex}
+                      className={`aspect-[4/3] overflow-hidden rounded-xl border-2 transition-colors ${index === activeImageIndex ? 'border-[#FF5C00]' : 'border-transparent hover:border-black/20'}`}
+                    >
+                      <img
+                        src={image.src}
+                        alt=""
+                        className="h-full w-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </section>
+          )}
 
           <div className="grid gap-6 sm:grid-cols-2">
             {sections.map((section) => (

@@ -1,46 +1,47 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "HelveticaNowDisplay";
-  src: url("/images/68832fb0ffba9b1995adac75-helveticanowdisplay-medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  --color-primary: #111111;
-  --color-accent: #FF5C00;
-  --color-bg-light: #fbfbfd;
-  --color-card-light: #ffffff;
-  --color-text-main: #111111;
-  --color-text-muted: #666666;
-  --color-border-subtle: rgba(0, 0, 0, 0.08);
-  --color-border-hover: rgba(0, 0, 0, 0.18);
+  --color-primary: #090908;
+  --color-accent: #c3a04a;
+  --color-bg-light: #11110f;
+  --color-card-light: #191916;
+  --color-text-main: #f1efe8;
+  --color-text-muted: #aaa79f;
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  --color-border-hover: rgba(255, 255, 255, 0.2);
 }
 
 ::selection {
-  background-color: #FF5C00;
-  color: #ffffff;
+  background-color: #c3a04a;
+  color: #090908;
 }
 
 ::-moz-selection {
-  background-color: #FF5C00;
-  color: #ffffff;
+  background-color: #c3a04a;
+  color: #090908;
 }
 
 body {
-  background-color: #090a0c;
-  color: #111111;
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #090908;
+  color: #f1efe8;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
 }
 
 .scene-gradient {
-  background-color: #9d9ea1;
+  background-color: #91918b;
+  --scene-glow-opacity: 1;
+}
+
+.scene-gradient::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image:
-    radial-gradient(ellipse 76% 82% at 50% 44%, rgba(255, 147, 94, 0.25) 0%, rgba(255, 92, 0, 0.12) 43%, transparent 82%),
-    radial-gradient(ellipse at 50% 46%, transparent 34%, rgba(17, 12, 11, 0.4) 100%);
+    radial-gradient(ellipse 76% 82% at 50% 44%, rgba(210, 190, 133, 0.2) 0%, rgba(154, 130, 74, 0.1) 43%, transparent 82%),
+    radial-gradient(ellipse at 50% 46%, transparent 34%, rgba(17, 16, 13, 0.42) 100%);
+  opacity: var(--scene-glow-opacity);
+  pointer-events: none;
 }
 
 .scene-wall-spotlight {
@@ -50,24 +51,25 @@ body {
   pointer-events: none;
   background: radial-gradient(
     ellipse 56% 62% at 50% 43%,
-    rgba(255, 190, 139, 0.3),
-    rgba(255, 112, 50, 0.13) 48%,
+    rgba(221, 202, 153, 0.24),
+    rgba(173, 149, 91, 0.12) 48%,
     transparent 100%
   );
   filter: blur(34px);
   opacity: 0.82;
   mix-blend-mode: screen;
+  transition: opacity 120ms linear;
 }
 
 .scene-focus-filter {
   position: absolute;
+  z-index: 3;
   inset: -12px;
   pointer-events: none;
-  z-index: 2;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  transform: translate3d(8px, -5px, 0) scale(1.01);
-  transition: -webkit-mask-image 100ms ease, mask-image 100ms ease;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: opacity 180ms ease-out;
 }
 
 @media (hover: none) {
@@ -87,16 +89,15 @@ body {
 }
 
 .font-display {
-  font-family: 'HelveticaNowDisplay', 'DM Sans', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* Luxurious Frosted Glass Panels on White Surface */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(25, 25, 22, 0.88);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.3), 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .glass-panel-hover {
@@ -104,23 +105,21 @@ body {
 }
 
 .glass-panel-hover:hover {
-  border-color: rgba(0, 0, 0, 0.18);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 35px 80px -20px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.15);
+  border-color: rgba(195, 160, 74, 0.42);
+  background: rgba(31, 31, 27, 0.98);
+  box-shadow: 0 35px 80px -20px rgba(0, 0, 0, 0.45), 0 0 2px rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
 }
 
-/* Dark Contrast Panels */
 .glass-panel-dark {
-  background: rgba(10, 10, 10, 0.92);
+  background: rgba(10, 10, 9, 0.94);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #F5F5F7;
+  color: #f5f5f7;
   box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.4);
 }
 
-/* Technical Telemetry Badges */
 .telemetry-label {
   font-size: 10px;
   text-transform: uppercase;
@@ -129,17 +128,116 @@ body {
   font-weight: 600;
 }
 
-/* Minimalist Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #fbfbfd;
+  background: #11110f;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #d4d4d8;
+  background: #47443b;
   border-radius: 9999px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #a1a1aa;
+  background: #c3a04a;
+}
+
+.portfolio-surface {
+  background: #000000;
+  color: #f1efe8;
+}
+
+.portfolio-surface [class~="text-[#111111]"],
+.portfolio-surface [class~="text-black"] {
+  color: #f1efe8;
+}
+
+.portfolio-surface [class~="text-[#555555]"] {
+  color: #b9b6ad;
+}
+
+.portfolio-surface [class~="text-[#444444]"] {
+  color: #b9b6ad;
+}
+
+.portfolio-surface [class~="text-[#666666]"],
+.portfolio-surface [class~="text-[#777777]"],
+.portfolio-surface [class~="text-[#888888]"] {
+  color: #96938a;
+}
+
+.portfolio-surface [class~="text-[#FF5C00]"] {
+  color: #c3a04a;
+}
+
+.portfolio-surface [class~="bg-[#FF5C00]"] {
+  background-color: #c3a04a;
+}
+
+.portfolio-surface [class*="bg-white"] {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-surface [class*="bg-black/"] {
+  background-color: rgba(255, 255, 255, 0.045);
+}
+
+.portfolio-surface [class*="border-black"] {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.portfolio-surface [class~="hover:text-[#FF5C00]"]:hover {
+  color: #c3a04a;
+}
+
+.portfolio-surface button.work-details-button,
+.portfolio-surface button.work-details-button:hover {
+  background-color: #f5f4f0;
+  color: #090908;
+}
+
+#project-modal-container,
+#contact-modal-card {
+  background: #171714;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #f1efe8;
+}
+
+#project-modal-container [class~="text-[#111111]"],
+#contact-modal-card [class~="text-[#111111]"] {
+  color: #f1efe8;
+}
+
+#project-modal-container [class~="text-[#666666]"],
+#project-modal-container [class~="text-[#777777]"],
+#contact-modal-card [class~="text-[#666666]"] {
+  color: #aaa79f;
+}
+
+#project-modal-container [class*="bg-white"],
+#contact-modal-card [class*="bg-white"],
+#contact-modal-card [class*="bg-neutral-"] {
+  background-color: #22221e;
+}
+
+#project-modal-container [class*="border-black"],
+#contact-modal-card [class*="border-black"] {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+#project-modal-container [class~="text-[#FF5C00]"] {
+  color: #c3a04a;
+}
+
+#project-modal-container [class~="border-[#FF5C00]"] {
+  border-color: #c3a04a;
+}
+
+#project-modal-container [class~="bg-black"],
+#contact-modal-card [class~="bg-black"] {
+  background-color: #c3a04a;
+  color: #11110f;
 }

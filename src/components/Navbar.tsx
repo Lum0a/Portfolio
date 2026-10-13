@@ -32,7 +32,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
       id="main-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#fbfbfd]/90 backdrop-blur-xl border-b border-black/[0.08] py-3.5 shadow-sm'
+          ? 'bg-[#090908]/85 backdrop-blur-xl border-b border-white/[0.08] py-3.5 shadow-sm'
           : 'bg-transparent py-6'
       }`}
     >
@@ -48,7 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
           id="navbar-logo"
         >
           <span className="text-xl font-bold tracking-tight text-white group-hover:text-white/80 transition-colors font-display flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#FF5C00] shadow-[0_0_8px_rgba(255,92,0,0.6)]"></span>
+            <span className="w-2 h-2 rounded-full bg-[#c3a04a] shadow-[0_0_8px_rgba(195,160,74,0.35)]"></span>
             <span>/logo</span>
           </span>
           <span className="hidden sm:inline-block text-[10px] uppercase tracking-[0.25em] text-white/70 font-medium pl-3 border-l border-white/20">
@@ -57,42 +57,36 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-5 rounded-full border border-white/15 bg-black/15 px-5 py-3 text-[11px] font-medium uppercase tracking-widest text-white/85 backdrop-blur-xl">
+        <nav         className="hidden md:flex items-center gap-5 rounded-full border border-white/15 bg-black/20 px-5 py-3 text-[11px] font-medium uppercase tracking-widest text-white/85 backdrop-blur-xl">
           <button
             onClick={() => scrollToSection('work-section')}
-            className="hover:text-black transition-colors cursor-pointer"
+            className="hover:text-[#c3a04a] transition-colors cursor-pointer"
           >
             Arbeiten
           </button>
           <button
             onClick={() => scrollToSection('studio-section')}
-            className="hover:text-black transition-colors cursor-pointer"
+            className="hover:text-[#c3a04a] transition-colors cursor-pointer"
             id="nav-link-studio"
           >
             Über mich
           </button>
           <button
-            onClick={() => scrollToSection('process-section')}
-            className="hover:text-black transition-colors cursor-pointer"
+            onClick={() => scrollToSection('tools-section')}
+            className="hover:text-[#c3a04a] transition-colors cursor-pointer"
           >
-            Arbeitsweise
-          </button>
-          <button
-            onClick={() => scrollToSection('skills-section')}
-            className="hover:text-black transition-colors cursor-pointer"
-          >
-            Fähigkeiten
+            Werkzeuge
           </button>
           <button
             onClick={() => scrollToSection('resume-section')}
-            className="hover:text-black transition-colors cursor-pointer"
+            className="hover:text-[#c3a04a] transition-colors cursor-pointer"
             id="nav-link-resume"
           >
             Lebenslauf
           </button>
           <button
             onClick={onOpenContact}
-            className="hover:text-black transition-colors cursor-pointer"
+            className="hover:text-[#c3a04a] transition-colors cursor-pointer"
             id="nav-link-contact"
           >
             Kontakt
@@ -105,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
           <button
             onClick={onOpenContact}
             id="navbar-contact-btn"
-            className="group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#FF5C00] hover:text-white transition-all duration-300 shadow-sm cursor-pointer active:scale-95"
+            className="group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#c3a04a] text-[#11110f] font-semibold text-xs uppercase tracking-widest hover:bg-[#d3b25e] transition-all duration-300 shadow-sm cursor-pointer active:scale-95"
           >
             <span>Projekt anfragen</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -114,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-full bg-white border border-black/10 text-black hover:bg-black/5 transition-colors cursor-pointer"
+            className="md:hidden p-2 rounded-full bg-white/10 border border-white/15 text-white hover:bg-white/15 transition-colors cursor-pointer"
             id="mobile-menu-toggle"
             aria-label={mobileMenuOpen ? 'Navigation schließen' : 'Navigation öffnen'}
             aria-expanded={mobileMenuOpen}
@@ -128,9 +122,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
       {mobileMenuOpen && (
         <div
           id="mobile-dropdown-menu"
-          className="md:hidden bg-[#fbfbfd]/98 border-b border-black/10 px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200 backdrop-blur-2xl shadow-xl"
+          className="md:hidden bg-[#11110f]/98 border-b border-white/10 px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200 backdrop-blur-2xl shadow-xl"
         >
-          <nav className="flex flex-col space-y-3 text-xs font-semibold uppercase tracking-widest text-[#555555]">
+          <nav className="flex flex-col space-y-3 text-xs font-semibold uppercase tracking-widest text-white/70">
             <button
               onClick={() => scrollToSection('work-section')}
               className="text-left py-2 hover:text-black"
@@ -144,16 +138,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               Über mich
             </button>
             <button
-              onClick={() => scrollToSection('process-section')}
+              onClick={() => scrollToSection('tools-section')}
               className="text-left py-2 hover:text-black"
             >
-              Arbeitsweise
-            </button>
-            <button
-              onClick={() => scrollToSection('skills-section')}
-              className="text-left py-2 hover:text-black"
-            >
-              Fähigkeiten
+              Werkzeuge
             </button>
             <button
               onClick={() => scrollToSection('resume-section')}
